@@ -19,35 +19,77 @@
 package org.juanitodread.algorithmslab.scala.sorting
 
 /**
- *
- *
+ * This class represents the algorithm of Insertion Sort that consists in sort a
+ * collection of data by insertion.
+ * 
+ * <code>
+ * Complexity:
+ * ____________________________________________
+ * |    BEST    |    AVERAGE    |    WORST    |
+ * |____________|_______________|_____________|
+ * |    O(n)    |      O(n^2)   |    O(n^2)   |
+ * |____________|_______________|_____________|
+ * </code>
+ * 
  * @author juanitodread
- * @version $
+ * @version 1.0
  *
  * Feb 16, 2015
  */
 object InsertionSort {
 
+  /**
+   * This method sorts an array of integers in descendant order.
+   * 
+   * @param elements The array of integers to sort.
+   * 
+   * @return An array of sorted integers
+   */
   def sortInt( elements: Array[ Int ] ): Array[ Int ] = {
-    sort( elements, ( x: Int, y: Int ) => x < y)
-  }
-  
-  def sortString(elements: Array[Char]): Array[Char]={
-    sort(elements, (x: Char, y: Char) => x.toString.compareTo(y.toString) == -1)
+    sort( elements, ( x: Int, y: Int ) => x < y )
   }
 
-  private def swap[T]( elements: Array[ T ], index: Int ): Unit = {
+  /**
+   * This method sorts String in descendant order.
+   *
+   * @param word The string to sort.
+   *
+   * @return A sorted string.
+   */
+  def sortString( word: String ): String = {
+    def sortChar( elements: Array[ Char ] ): Array[ Char ] = {
+      sort( elements, ( x: Char, y: Char ) => x.compareTo( y ) < 0 )
+    }
+    sortChar( word.toCharArray ).deep.mkString( "" )
+  }
+
+  /**
+   * Helper method to swap two elements of the array.
+   * 
+   * @param elements Array of T
+   * 
+   * @param index Current position to swap
+   */
+  private def swap[ T ]( elements: Array[ T ], index: Int ): Unit = {
     val aux = elements( index )
     elements( index ) = elements( index - 1 )
     elements( index - 1 ) = aux
   }
 
-  private def sort[T]( elements: Array[T], func: ( T, T ) => Boolean ): Array[ T ] = {
+  /**
+   * Helper method to apply insertion sort algorithm over array.
+   * 
+   * @param items Array of T
+   * 
+   * @param index Current position to swap
+   */
+  private def sort[ T ]( elements: Array[ T ], func: ( T, T ) => Boolean ): Array[ T ] = {
     var j = 0
     for ( i <- 1 until elements.length ) {
       j = i
       while ( j > 0 && func( elements( j ), elements( j - 1 ) ) ) {
         swap( elements, j )
+        j = j - 1
       }
     }
     elements

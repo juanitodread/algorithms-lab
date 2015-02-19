@@ -21,6 +21,15 @@ package org.juanitodread.algorithmslab.sorting;
 /**
  * This class represents the algorithm of Insertion Sort that consists in sort a
  * collection of data by insertion.
+ * 
+ * <code>
+ * Complexity:
+ * ____________________________________________
+ * |    BEST    |    AVERAGE    |    WORST    |
+ * |____________|_______________|_____________|
+ * |    O(n)    |      O(n^2)   |    O(n^2)   |
+ * |____________|_______________|_____________|
+ * </code>
  *
  * @author juanitodread
  * @version 1.0

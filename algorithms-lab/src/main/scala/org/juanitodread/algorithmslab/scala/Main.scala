@@ -30,12 +30,11 @@ import org.juanitodread.algorithmslab.scala.sorting.InsertionSort
  */
 object Main {
 
-  def main(args: Array[String]) {
-    println("Hello World Scala")
-    val res = InsertionSort.sortInt(Array(4, 2, 5))
-    val res2 = InsertionSort.sortString("HOLA".toCharArray())
-    println(res.deep.mkString(""))
-    println(res2.deep.mkString(""))
+  def main( args: Array[ String ] ) {
+    val res = InsertionSort.sortInt( Array( 4, 2, 5, 1 ) )
+    val res2 = InsertionSort.sortString( "HELLO WORLD SCALA" )
+    println( res.deep )
+    println( res2 )
   }
   
 }
