@@ -16,7 +16,9 @@
  * limitations under the License.
  *
  */
-package org.juanitodread.algorithmslab.scala.sorting
+package org.juanitodread.algorithmslab.sorting
+
+import org.juanitodread.algorithmslab.util.Utils
 
 /**
  * This class represents the algorithm of Insertion Sort that consists in sort a
@@ -36,7 +38,7 @@ package org.juanitodread.algorithmslab.scala.sorting
  *
  * Feb 16, 2015
  */
-object InsertionSort {
+object InsertionSort extends Utils {
 
   /**
    * This method sorts an array of integers in descendant order.
@@ -45,8 +47,8 @@ object InsertionSort {
    *
    * @return An array of sorted integers
    */
-  def sortInt( elements: Array[ Int ] ): Array[ Int ] = {
-    sort( elements, ( x: Int, y: Int ) => x < y )
+  def sortIntArray(elements: Array[Int]): Array[Int] = {
+    sort(elements, (x: Int, y: Int) => x < y)
   }
 
   /**
@@ -56,24 +58,11 @@ object InsertionSort {
    *
    * @return A sorted string.
    */
-  def sortString( word: String ): String = {
-    def sortChar( elements: Array[ Char ] ): Array[ Char ] = {
-      sort( elements, ( x: Char, y: Char ) => x.compareTo( y ) < 0 )
+  def sortString(word: String): String = {
+    def sortChar(elements: Array[Char]): Array[Char] = {
+      sort(elements, (x: Char, y: Char) => x.compareTo(y) < 0)
     }
-    sortChar( word.toCharArray ).deep.mkString( "" )
-  }
-
-  /**
-   * Helper method to swap two elements of the array.
-   *
-   * @param elements Array of T
-   *
-   * @param index Current position to swap
-   */
-  private def swap[ T ]( elements: Array[ T ], index: Int ): Unit = {
-    val aux = elements( index )
-    elements( index ) = elements( index - 1 )
-    elements( index - 1 ) = aux
+    sortChar(word.toCharArray).deep.mkString("")
   }
 
   /**
@@ -83,12 +72,12 @@ object InsertionSort {
    *
    * @param index Current position to swap
    */
-  private def sort[ T ]( elements: Array[ T ], func: ( T, T ) => Boolean ): Array[ T ] = {
+  private def sort[T](elements: Array[T], func: (T, T) => Boolean): Array[T] = {
     var j = 0
-    for ( i <- 1 until elements.length ) {
+    for (i <- 1 until elements.length) {
       j = i
-      while ( j > 0 && func( elements( j ), elements( j - 1 ) ) ) {
-        swap( elements, j )
+      while (j > 0 && func(elements(j), elements(j - 1))) {
+        swap(elements, j, j - 1)
         j = j - 1
       }
     }

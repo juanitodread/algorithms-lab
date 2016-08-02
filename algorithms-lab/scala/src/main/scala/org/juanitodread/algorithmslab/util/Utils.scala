@@ -1,7 +1,7 @@
 /**
  * algorithms-lab
  *
- * Copyright 2015 juanitodread
+ * Copyright 2016 juanitodread
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,25 +16,22 @@
  * limitations under the License.
  *
  */
-package org.juanitodread.algorithmslab
+package org.juanitodread.algorithmslab.util
 
-import org.juanitodread.algorithmslab.sorting.InsertionSort
+trait Utils {
 
-/**
- *
- *
- * @author juanitodread
- * @version 1.0
- *
- * Feb 9, 2015
- */
-object Main {
-
-  def main(args: Array[String]) {
-    val res = InsertionSort.sortInt(Array(4, 2, 5, 1))
-    val res2 = InsertionSort.sortString("helloworldscala")
-    println(res.deep)
-    println(res2)
+  /**
+   * Helper method to swap two elements of the array.
+   *
+   * @param elements Array of T
+   * @param origin Current position to swap
+   * @param dest Destiny position to swap
+   */
+  def swap[T](elements: Array[T], origin: Int, dest: Int): Array[T] = {
+    val aux = elements(origin)
+    elements(origin) = elements(dest)
+    elements(dest) = aux
+    elements
   }
 
 }
