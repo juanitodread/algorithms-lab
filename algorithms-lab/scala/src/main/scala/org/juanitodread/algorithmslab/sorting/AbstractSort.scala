@@ -1,7 +1,7 @@
 /**
  * algorithms-lab
  *
- * Copyright 2015 juanitodread
+ * Copyright 2016 juanitodread
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,25 +16,29 @@
  * limitations under the License.
  *
  */
-package org.juanitodread.algorithmslab
-
-import org.juanitodread.algorithmslab.sorting.InsertionSort
+package org.juanitodread.algorithmslab.sorting
 
 /**
- * Main application
- *
  * @author juanitodread
- * @version 1.0
+ * @version 1.0.0
  *
- * Feb 9, 2015
+ *          8/2/16
  */
-object Main {
+abstract class AbstractSort {
 
-  def main(args: Array[String]) {
-    val res = InsertionSort.sortIntArray(Array(4, 2, 5, 1))
-    val res2 = InsertionSort.sortString("helloworldscala")
-    println(res.deep)
-    println(res2)
-  }
+  protected def sortInt = (x: Int, y: Int) => x < y
 
+  protected def sortString = (x: String, y: String) => x < y
+
+  protected def sortChar = (x: Char, y: Char) => x < y
+
+  /**
+   * Method to apply sort algorithm over array.
+   *
+   * @param elements Array of T
+   * @param func Function to sort the elements of the items
+   *
+   * @return A sorted array of T elements
+   */
+  def sort[T](elements: Array[T], func: (T, T) => Boolean): Array[T]
 }

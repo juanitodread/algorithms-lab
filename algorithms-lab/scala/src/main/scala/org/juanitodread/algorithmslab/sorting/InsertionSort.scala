@@ -38,7 +38,7 @@ import org.juanitodread.algorithmslab.util.Utils
  *
  * Feb 16, 2015
  */
-object InsertionSort extends Utils {
+object InsertionSort extends AbstractSort with Utils {
 
   /**
    * This method sorts an array of integers in descendant order.
@@ -48,31 +48,29 @@ object InsertionSort extends Utils {
    * @return An array of sorted integers
    */
   def sortIntArray(elements: Array[Int]): Array[Int] = {
-    sort(elements, (x: Int, y: Int) => x < y)
+    sort(elements, sortInt)
   }
 
   /**
    * This method sorts String in descendant order.
    *
-   * @param word The string to sort.
+   * @param str The string to sort.
    *
    * @return A sorted string.
    */
-  def sortString(word: String): String = {
-    def sortChar(elements: Array[Char]): Array[Char] = {
-      sort(elements, (x: Char, y: Char) => x.compareTo(y) < 0)
-    }
-    sortChar(word.toCharArray).deep.mkString("")
+  def sortString(str: String): String = {
+    sort(str.toCharArray, sortChar).mkString("")
   }
 
   /**
    * Helper method to apply insertion sort algorithm over array.
    *
-   * @param items Array of T
+   * @param elements Array of T
+   * @param func Function to sort the elements of the items
    *
-   * @param index Current position to swap
+   * @return A sorted array of T elements
    */
-  private def sort[T](elements: Array[T], func: (T, T) => Boolean): Array[T] = {
+  override def sort[T](elements: Array[T], func: (T, T) => Boolean): Array[T] = {
     var j = 0
     for (i <- 1 until elements.length) {
       j = i
