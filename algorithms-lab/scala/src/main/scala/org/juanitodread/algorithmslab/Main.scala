@@ -16,10 +16,9 @@
  * limitations under the License.
  *
  */
-package org.juanitodread.algorithmslab.scala.sorting
+package org.juanitodread.algorithmslab.scala
 
-import org.scalatest.Matchers
-import org.scalatest.FlatSpec
+import org.juanitodread.algorithmslab.scala.sorting.InsertionSort
 
 /**
  *
@@ -27,22 +26,15 @@ import org.scalatest.FlatSpec
  * @author juanitodread
  * @version 1.0
  *
- * Feb 23, 2015
+ * Feb 9, 2015
  */
-class InsertionSortTest extends FlatSpec with Matchers {
+object Main {
 
-  val sortedNumbers = Array( 0, 1, 2, 2, 2, 3, 4, 5, 6, 7, 7, 8, 10 )
-  val numbers = Array( 2, 4, 2, 6, 7, 3, 5, 7, 1, 8, 2, 10, 0 )
-
-  val word = "INSERTIONSORT"
-  val sortedWord = "EIINNOORRSSTT"
-
-  "This test compares two Int arrays" should "pass" in {
-    InsertionSort.sortInt( numbers ) should equal( sortedNumbers )
-  }
-
-  "This test compares two Strings arrays" should "pass" in {
-    InsertionSort.sortString( word ) should equal( sortedWord )
+  def main( args: Array[ String ] ) {
+    val res = InsertionSort.sortInt( Array( 4, 2, 5, 1 ) )
+    val res2 = InsertionSort.sortString( "HELLO WORLD SCALA" )
+    println( res.deep )
+    println( res2 )
   }
 
 }

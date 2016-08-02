@@ -21,7 +21,7 @@ package org.juanitodread.algorithmslab.scala.sorting
 /**
  * This class represents the algorithm of Insertion Sort that consists in sort a
  * collection of data by insertion.
- * 
+ *
  * <code>
  * Complexity:
  * ____________________________________________
@@ -30,7 +30,7 @@ package org.juanitodread.algorithmslab.scala.sorting
  * |    O(n)    |      O(n^2)   |    O(n^2)   |
  * |____________|_______________|_____________|
  * </code>
- * 
+ *
  * @author juanitodread
  * @version 1.0
  *
@@ -40,9 +40,9 @@ object InsertionSort {
 
   /**
    * This method sorts an array of integers in descendant order.
-   * 
+   *
    * @param elements The array of integers to sort.
-   * 
+   *
    * @return An array of sorted integers
    */
   def sortInt( elements: Array[ Int ] ): Array[ Int ] = {
@@ -65,9 +65,9 @@ object InsertionSort {
 
   /**
    * Helper method to swap two elements of the array.
-   * 
+   *
    * @param elements Array of T
-   * 
+   *
    * @param index Current position to swap
    */
   private def swap[ T ]( elements: Array[ T ], index: Int ): Unit = {
@@ -78,9 +78,9 @@ object InsertionSort {
 
   /**
    * Helper method to apply insertion sort algorithm over array.
-   * 
+   *
    * @param items Array of T
-   * 
+   *
    * @param index Current position to swap
    */
   private def sort[ T ]( elements: Array[ T ], func: ( T, T ) => Boolean ): Array[ T ] = {
