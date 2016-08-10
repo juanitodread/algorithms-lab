@@ -12,3 +12,8 @@ You can find a variety of algorithms in the [algorithms-lab](https://github.com/
 |------------------------|-------------------|----------------|-----------------|-----------------|-------------------------|
 |Insertion Sort          |Array              |O(n)            |O(n^2)           |O(n^2)           |[Scala](https://github.com/juanitodread/algorithms-lab/blob/master/algorithms-lab/scala/src/main/scala/org/juanitodread/algorithmslab/sorting/InsertionSort.scala),  [Java](https://github.com/juanitodread/algorithms-lab/blob/master/algorithms-lab/java/src/main/java/org/juanitodread/algorithmslab/sorting/InsertionSort.java)|
 |Selection Sort          |Array              |O(n^2)          |O(n^2)           |O(n^2)           |[Scala](https://github.com/juanitodread/algorithms-lab/blob/master/algorithms-lab/scala/src/main/scala/org/juanitodread/algorithmslab/sorting/SelectionSort.scala)|
+
+### String
+|Algorithm               |Data structure     |Best            |Average          |Worst            |Implementations          |
+|------------------------|-------------------|----------------|-----------------|-----------------|-------------------------|
+|IndexOf (Java Imp)      |Array              |O(n + m)        |O(n * m)         |O(n * m )      |[Scala](https://github.com/juanitodread/algorithms-lab/blob/master/algorithms-lab/scala/src/main/scala/org/juanitodread/algorithmslab/string/PatternMatchingIndexOf.scala)|
