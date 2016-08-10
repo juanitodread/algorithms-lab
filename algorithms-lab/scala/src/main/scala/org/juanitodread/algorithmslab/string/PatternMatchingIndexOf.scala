@@ -19,15 +19,17 @@
 package org.juanitodread.algorithmslab.string
 
 /**
- * This class represents the algorithm of Selection Sort that consists in sort a
- * collection of data by select the lower element in the array.
+ * This class represents the algorithm of IndexOf (Java Implementation) that
+ * consists in match a string M in string N. If the string M is a subset of
+ * string N then return the index of the string N where M matches, otherwise
+ * return -1.
  *
  * <code>
  * Complexity:
  * ____________________________________________
  * |    BEST    |    AVERAGE    |    WORST    |
  * |____________|_______________|_____________|
- * |    O(n^2)  |    O(n^2)     |    O(n^2)   |
+ * |  O(n + m)  |    O(n + m)   |    O(n * m) |
  * |____________|_______________|_____________|
  * </code>
  *
@@ -36,7 +38,7 @@ package org.juanitodread.algorithmslab.string
  *
  * Aug 10, 2016
  */
-object PatternMatching {
+object PatternMatchingIndexOf {
 
   private[this] def isValid(str: String, p: String): Boolean = p.length <= str.length
 
