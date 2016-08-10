@@ -16,9 +16,7 @@
  * limitations under the License.
  *
  */
-package org.juanitodread.algorithmslab
-
-import org.juanitodread.algorithmslab.sorting.InsertionSort
+package org.juanitodread.algorithmslab.sorting
 
 /**
  * Main application
@@ -31,10 +29,18 @@ import org.juanitodread.algorithmslab.sorting.InsertionSort
 object Main {
 
   def main(args: Array[String]) {
-    val res = InsertionSort.sortIntArray(Array(4, 2, 5, 1))
-    val res2 = InsertionSort.sortString("helloworldscala")
+    val intArr = Array(2, 5, 1, 23, 4, 6, 4, 2, -2, 4)
+    val str = "helloworldscala"
+
+    println(":::: Insertion Sort::::")
+    val res = InsertionSort.sortIntArray(intArr)
+    val res2 = InsertionSort.sortString(str)
     println(res.deep)
     println(res2)
+
+    println("\n:::: Selection Sort::::")
+    println(SelectionSort.sortIntArray(intArr).deep)
+    println(SelectionSort.sortString(str))
   }
 
 }
